@@ -46,11 +46,9 @@ jobs:
         with:
           name: CiCdTraining publish
           run:  cd CiCdTraining/ && dotnet publish
-          path: /home/runner/work/CiCdTraining/bin/Debug/netcoreapp3.1/publish/
+          path: /home/runner/work/CiCdTraining/bin/Debug/netcoreapp3.1/publish/ 
           
-          
-      - name: Checkout
-        uses: actions/checkout@v2
+      
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
