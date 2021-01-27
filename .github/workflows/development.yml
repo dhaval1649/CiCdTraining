@@ -18,7 +18,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -41,10 +41,15 @@ jobs:
       - name: dotnet publish
         run: |
           dotnet publish -c Release  -o cicdtraining 
-          
       - name: Upload Build Artifact
         uses: actions/upload-artifact@v2
         with:
           name: CiCdTraining publish
           run:  cd CiCdTraining/ && dotnet publish
-          path: /home/runner/work/CiCdTraining/bin/Debug/netcoreapp3.1/publish/
+          path: CiCdTraining/CiCdTraining/bin/Debug/netcoreapp3.1/publish/ 
+          
+
+      - name: Deploy Application
+        shell: cmd
+        run: '"C:\Program Files (x86)\IIS\Microsoft Web Deploy V3/msdeploy.exe" -verb:sync -allowUntrusted -source:contentPath="D:\a\CiCdTraining\CiCdTraining\cicdtraining\" -dest:contentPath="C:\awsdemo",computerName="https://ec2-18-217-133-22.us-east-2.compute.amazonaws.com:8172/msdeploy.axd?site=awssite",username="EC2AMAZ-PNOKDST\Administrator",password="@.@5JQR6;U*QMKs=gpg=G-;pCuB3U=V-",authtype="Basic"'
+
