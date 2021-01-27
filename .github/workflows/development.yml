@@ -51,5 +51,5 @@ jobs:
 
       - name: Deploy Application
         shell: cmd
-        run: '"C:\Program Files (x86)\IIS\Microsoft Web Deploy V3/msdeploy.exe" -verb:sync -allowUntrusted -source:contentPath="D:\a\CiCdTraining\CiCdTraining\cicdtraining\" -dest:contentPath="C:\awsdemo",computerName="https://ec2-18-217-133-22.us-east-2.compute.amazonaws.com:8172/msdeploy.axd?site=awssite",username="EC2AMAZ-PNOKDST\Administrator",password="@.@5JQR6;U*QMKs=gpg=G-;pCuB3U=V-",authtype="Basic"'
+        run: '"C:\Program Files (x86)\IIS\Microsoft Web Deploy V3/msdeploy.exe" -verb:sync -allowUntrusted -source:contentPath="D:\a\CiCdTraining\CiCdTraining\cicdtraining\" -dest:contentPath="C:\awsdemo",computerName="https://ec2-3-134-76-155.us-east-2.compute.amazonaws.com:8172/msdeploy.axd?site=awssite",username="EC2AMAZ-PNOKDST\Administrator",password="@.@5JQR6;U*QMKs=gpg=G-;pCuB3U=V-",authtype="Basic"'
 
