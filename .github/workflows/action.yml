@@ -12,5 +12,5 @@ jobs:
         uses: launchdarkly/find-code-references@v9
         with:
           githubToken: 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
-          accessToken: api-9f6747c4-a376-4b0d-a5ed-3591993e1ea2
+          accessToken: ${{ secrets.LD_ACCESS_TOKEN }}
           projKey: 613201ab1bb3e6274cbb15f6
